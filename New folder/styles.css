@@ -1,0 +1,294 @@
+        /* Global styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: #000;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #14b040;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Card section */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .image-container {
+            flex: 1 0 300px;
+            /* The image container will take one-third of the available space, but won't grow beyond 300px */
+            margin-right: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .content-container {
+            flex: 2 0 300px;
+            /* The content container will take two-thirds of the available space, but won't grow beyond 300px */
+        }
+
+        h2 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #14b040;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Media Query for responsive layout on smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .image-container,
+            .content-container {
+                flex: 1 0 100%;
+                /* Make both containers take 100% width on smaller screens */
+                margin-right: 0;
+            }
+
+            .image-container {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Existing rules for smaller screens */
+
+            .image-container img {
+                max-width: 70%;
+                /* Adjust the percentage as per your requirement */
+                max-height: 70%;
+                /* Adjust the percentage as per your requirement */
+            }
+        }
+
+
+        /* Futuristic Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 3px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-heading {
+            font-size: 24px;
+            /* Adjust the font size as needed */
+            color: #14b040;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            /* Adjust the font size as needed */
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            border-bottom-color: #14b040;
+        }
+
+        .footer-left {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (min-width: 500px) {
+            .footer-container {
+                flex-direction: row;
+                padding: 20px 40px;
+                /* Adjust the padding as needed */
+            }
+
+            .footer-heading {
+                font-size: 28px;
+                /* Adjust the font size as needed */
+            }
+
+            .footer-left {
+                margin: 0;
+                margin-right: auto;
+            }
+
+            .footer-right {
+                margin-left: auto;
+            }
+        }
+
+        /* Styles for larger screens */
+        .left-side,
+        .right-side {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .left-side {
+            width: 100%;
+            text-align: left;
+        }
+
+        .right-side {
+            width: 100%;
+            text-align: right;
+        }
+
+        /* Styles for smaller screens */
+        @media (max-width: 768px) {
+
+            .left-side,
+            .right-side {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .card {
+                width: calc(100% - 40px);
+                margin: 10px;
+            }
+        }
+
+        .card-video {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio (change this value if needed) */
+        }
+
+        .card-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Background Video */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        #splash-screen {
+            background: #000;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Added */
+            justify-content: center;
+            align-items: center;
+            animation: fadeOut 1s ease-in-out 4s forwards;
+        }
+
+        h1 {
+            margin-top: 20px;
+            /* Added */
+            color: #14b040;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .container {
+            /* Existing styles */
+        
+            /* Add scroll to the container */
+            overflow: auto;
+        
+            /* If you want to limit the height of the container, you can set a specific height */
+            /* For example, you can set the container to take 70% of the viewport height */
+            max-height: 65vh;
+        }
